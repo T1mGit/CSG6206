@@ -20,3 +20,12 @@ In both cases it creates and writes an new html file showing the heatmap.<br>
 <pre>
 Comand Line Usage:    wordstat FILE
 </pre>
+<h2>Simple IRC</h2>
+<b>Files:</b>
+<i>client20181022.lua<br>
+  server20181022.lua<br>
+  screenshots.docx
+</i><p><p>
+These lua scripts implement a simple client and server IRC. The screenshots.docx show the output when running the scripts.<br>
+  The scripts used the lua socket library and the sqlite library. The sqlite database files are created  by the script if they dont aleady exists.<br>
+  NOTE: Some issues exist with scaling. During testing, only 6-8 clients were able to be connected simultaneously before messages started being dropped. The current implementation uses synchronos IO for keyboard input, ie the keyboard input is blocking script execution. Therefore, the server stores messages until requested by the client due to the cient not being able to process them.
